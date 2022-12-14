@@ -1,0 +1,44 @@
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 49x;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 1920px;
+}
+
+.title {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 20.8px;
+}
+
+.menu {
+  height: 20.8px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.menu:hover {
+  border-bottom: 2px solid black;
+}
+
+.bottom {
+  background-color: #ff4664;
+  text-align: center;
+  height: 27px;
+  position: absolute;
+  top: 48px;
+  width: 1920px;
+}
+
+.bottomText {
+  padding: 5px;
+  color: white;
+  font-size: 12px;
+}
