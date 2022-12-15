@@ -1,5 +1,5 @@
-// import { type } from '@testing-library/user-event/dist/type';
-// import React, { useEffect, useState } from 'react';
+import { type } from '@testing-library/user-event/dist/type';
+import React, { useEffect, useState } from 'react';
 import './Header.css';
 
 interface HeaderProps {
@@ -10,6 +10,7 @@ interface HeaderProps {
 
 // type resultProps = {
 //   title: string;
+//   id: number;
 // };
 
 export function Header(head: HeaderProps) {
@@ -17,7 +18,7 @@ export function Header(head: HeaderProps) {
 
   //   useEffect(() => {
   //     const api = async () => {
-  //       const data = await fetch('./data/sample.json', {
+  //       const data = await fetch('/data/sample.json', {
   //         method: 'GET',
   //       });
   //       const jsonData = await data.json();
@@ -40,7 +41,6 @@ export function Header(head: HeaderProps) {
               </button>
             );
           })}
-          <h2>{head.title}</h2>
         </div>
         <div className="right">
           <div className="rightText">{head.rightText}</div>
