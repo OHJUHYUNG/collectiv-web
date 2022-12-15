@@ -1,19 +1,51 @@
 .Wrapper {
   display: flex;
   justify-content: space-between;
-  height: 49x;
   position: absolute;
   left: 0px;
   top: 0px;
   width: 1920px;
+  height: 49px;
+  padding-top: 15px;
+  margin: 0 auto;
+}
+
+.logo {
+  position: absolute;
+  width: 96px;
+  height: 19px;
+  left: 268px;
+  top: 14px;
+
+  /* background-image: url('/public/images/sample.png'); */
+}
+
+.img {
+  width: 120px;
 }
 
 .title {
   width: 350px;
-  display: flex;
-  justify-content: space-between;
   text-align: center;
   line-height: 20.8px;
+  height: 20.8px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+}
+
+.right {
+  position: absolute;
+  width: 112px;
+  height: 16px;
+  left: 1540px;
+  top: 16px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 130%;
 }
 
 .menu {
@@ -22,6 +54,8 @@
   background-color: white;
   font-size: 16px;
   cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .menu:hover {

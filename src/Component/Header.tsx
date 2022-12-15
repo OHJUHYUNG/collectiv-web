@@ -7,6 +7,7 @@ interface HeaderProps {
   rightText: string;
   centerText: string;
 }
+
 // type resultProps = {
 //   title: string;
 // };
@@ -29,7 +30,7 @@ export function Header(head: HeaderProps) {
     <>
       <div className="Wrapper">
         <div className="logo">
-          <img src="./" alt="logo이미지" />
+          <img className="img" src="/images/sample.png" alt="logo이미지" />
         </div>
         <div className="title">
           {SAMPLEDATA.map((menu) => {
