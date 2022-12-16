@@ -1,5 +1,5 @@
-import { type } from '@testing-library/user-event/dist/type';
-import React, { useEffect, useState } from 'react';
+// import { type } from '@testing-library/user-event/dist/type';
+// import React, { useEffect, useState } from 'react';
 import './Header.css';
 
 interface HeaderProps {
@@ -9,12 +9,12 @@ interface HeaderProps {
 }
 
 // type resultProps = {
-//   title: string;
 //   id: number;
+//   title: string;
 // };
 
 export function Header(head: HeaderProps) {
-  //   const [result, setResult] = useState<resultProps[]>([]);
+  //   const [isData, setIsData] = useState<resultProps[]>([]);
 
   //   useEffect(() => {
   //     const api = async () => {
@@ -22,16 +22,17 @@ export function Header(head: HeaderProps) {
   //         method: 'GET',
   //       });
   //       const jsonData = await data.json();
-  //       setResult(jsonData.results);
+  //       setIsData(jsonData.result);
   //     };
   //     api();
+  //     console.log(isData);
   //   }, []);
 
   return (
     <>
       <div className="Wrapper">
         <div className="logo">
-          <img className="img" src="/images/sample.png" alt="logo이미지" />
+          <img className="img" src="/images/logo.png" alt="logo이미지" />
         </div>
         <div className="title">
           {SAMPLEDATA.map((menu) => {
