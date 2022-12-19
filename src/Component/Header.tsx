@@ -1,5 +1,5 @@
-// import { type } from '@testing-library/user-event/dist/type';
-// import React, { useEffect, useState } from 'react';
+import { type } from '@testing-library/user-event/dist/type';
+import React, { useEffect, useState } from 'react';
 import './Header.css';
 
 interface HeaderProps {
@@ -8,26 +8,25 @@ interface HeaderProps {
   centerText: string;
 }
 
-// type resultProps = {
-//   id: number;
-//   title: string;
-// };
-//check
+type resultProps = {
+  id: number;
+  title: string;
+};
 
 export function Header(head: HeaderProps) {
-  //   const [isData, setIsData] = useState<resultProps[]>([]);
+  const [isData, setIsData] = useState<resultProps[]>([]);
 
-  //   useEffect(() => {
-  //     const api = async () => {
-  //       const data = await fetch('/data/sample.json', {
-  //         method: 'GET',
-  //       });
-  //       const jsonData = await data.json();
-  //       setIsData(jsonData.result);
-  //     };
-  //     api();
-  //     console.log(isData);
-  //   }, []);
+  useEffect(() => {
+    const api = async () => {
+      const data = await fetch('/data/sample.json', {
+        method: 'GET',
+      });
+      const jsonData = await data.json();
+      setIsData(jsonData);
+    };
+    api();
+    // console.log(isData);
+  }, []);
 
   return (
     <>
@@ -36,7 +35,7 @@ export function Header(head: HeaderProps) {
           <img className="img" src="/images/logo.png" alt="logo이미지" />
         </div>
         <div className="title">
-          {SAMPLEDATA.map((menu) => {
+          {isData.map((menu) => {
             return (
               <button className="menu" key={menu.id}>
                 {menu.title}
@@ -56,22 +55,3 @@ export function Header(head: HeaderProps) {
 }
 
 export default Header;
-
-const SAMPLEDATA = [
-  {
-    id: 1,
-    title: '홈',
-  },
-  {
-    id: 2,
-    title: '둘러보기',
-  },
-  {
-    id: 3,
-    title: '판매하기',
-  },
-  {
-    id: 4,
-    title: '다운로드',
-  },
-];
