@@ -55,6 +55,7 @@
   text-align: center;
   height: 27px;
   top: 48px;
+  border-top: 1px solid black;
 }
 
 .bottomText {
