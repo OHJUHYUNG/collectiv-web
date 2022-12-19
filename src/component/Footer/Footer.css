@@ -62,7 +62,7 @@
     color: #4F4F4F;
 }
 
-.FAQAndTips {
+.faqAndTips {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -70,7 +70,7 @@
     margin-top: 16px;
 }
 
-.FAQ {
+.faq {
     font-family: "Pretendard";
     font-style: normal;
     font-weight: 600;

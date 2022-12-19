@@ -19,8 +19,8 @@ const Footer = (foot: FooterProps) => {
         <button className="oneOnOneBox">
           <p className="oneOnOneText">1:1 문의</p>
         </button>
-        <div className="FAQAndTips">
-          <div className="FAQ">자주 묻는 질문</div>
+        <div className="faqAndTips">
+          <div className="faq">자주 묻는 질문</div>
           <div className="usefulTips">서비스 이용 방법</div>
         </div>
         <div className="termsOfUse">이용약관</div>
