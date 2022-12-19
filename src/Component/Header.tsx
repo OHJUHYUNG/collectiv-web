@@ -12,6 +12,7 @@ interface HeaderProps {
 //   id: number;
 //   title: string;
 // };
+//check
 
 export function Header(head: HeaderProps) {
   //   const [isData, setIsData] = useState<resultProps[]>([]);
