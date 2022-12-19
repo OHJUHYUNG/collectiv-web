@@ -1,6 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
 
-.Wrapper {
+.wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;

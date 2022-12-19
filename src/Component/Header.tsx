@@ -1,4 +1,5 @@
 import { type } from '@testing-library/user-event/dist/type';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './Header.css';
 
@@ -16,21 +17,19 @@ type resultProps = {
 export function Header(head: HeaderProps) {
   const [isData, setIsData] = useState<resultProps[]>([]);
 
+  async function fetchData() {
+    axios.get('/data/sample.json', {}).then((result) => {
+      setIsData(result.data);
+    });
+  }
+
   useEffect(() => {
-    const api = async () => {
-      const data = await fetch('/data/sample.json', {
-        method: 'GET',
-      });
-      const jsonData = await data.json();
-      setIsData(jsonData);
-    };
-    api();
-    // console.log(isData);
+    fetchData();
   }, []);
 
   return (
     <>
-      <div className="Wrapper">
+      <div className="wrapper">
         <div className="logo">
           <img className="img" src="/images/logo.png" alt="logo이미지" />
         </div>
