@@ -17,10 +17,13 @@ type resultProps = {
 export function Header(head: HeaderProps) {
   const [isData, setIsData] = useState<resultProps[]>([]);
 
-  async function fetchData() {
-    axios.get('/data/sample.json', {}).then((result) => {
-      setIsData(result.data);
-    });
+  function fetchData() {
+    axios
+      .get('/data/sample.json', {})
+      .then((result) => {
+        setIsData(result.data);
+      })
+      .catch(console.error);
   }
 
   useEffect(() => {
