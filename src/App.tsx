@@ -1,23 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './Component/Header';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Header
+          title=""
+          rightText="FILL IN YOUR VALUE"
+          centerText=" 안전 결제 수수료 0원, 판매자 추가 정산 이벤트중"
+        />
       </header>
     </div>
   );
