@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Component/Header';
+import ProductList from './Component/productList/ProductList';
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
           centerText=" 안전 결제 수수료 0원, 판매자 추가 정산 이벤트중"
         />
       </header>
+      <ProductList
+        categoryTitle="카테고리
+      "
+      />
     </div>
   );
 }
