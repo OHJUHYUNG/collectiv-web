@@ -8,6 +8,7 @@
     "productImg": "/images/sample1.png",
     "sub": "[os] 디젤 니트 비니 블랙",
     "price": 64000,
+    "quantity": 1,
     "watch": 345,
     "like": 6
   },
@@ -20,6 +21,7 @@
     "productImg": "/images/sample2.png",
     "sub": "[os] 디젤 니트 비니 블랙",
     "price": 54000,
+    "quantity": 0,
     "watch": 245,
     "like": 52
   },
@@ -32,6 +34,7 @@
     "productImg": "/images/sample3.png",
     "sub": "[os] 디젤 니트 비니 블랙",
     "price": 1164000,
+    "quantity": 1,
     "watch": 145,
     "like": 116
   },
@@ -44,6 +47,7 @@
     "productImg": "/images/sample4.png",
     "sub": "[os] 디젤 니트 비니 블랙",
     "price": 1234000,
+    "quantity": 1,
     "watch": 145,
     "like": 111
   },
@@ -53,11 +57,12 @@
     "userImg": "/images/user.jpeg",
     "time": 3,
     "productName": "Diesel",
-    "productImg": "/images/sample1.png",
+    "productImg": "/images/sample5.png",
     "sub": "[os] 디젤 니트 비니 블랙",
-    "price": 64000,
-    "watch": 345,
-    "like": 6
+    "price": 164000,
+    "quantity": 0,
+    "watch": 545,
+    "like": 65
   },
   {
     "id": 6,
@@ -65,11 +70,12 @@
     "userImg": "/images/user.jpeg",
     "time": 4,
     "productName": "Diesel",
-    "productImg": "/images/sample2.png",
+    "productImg": "/images/sample6.png",
     "sub": "[os] 디젤 니트 비니 블랙",
-    "price": 54000,
-    "watch": 245,
-    "like": 52
+    "price": 4354000,
+    "quantity": 1,
+    "watch": 24,
+    "like": 5
   },
   {
     "id": 7,
@@ -77,11 +83,12 @@
     "userImg": "/images/user.jpeg",
     "time": 10,
     "productName": "Diesel",
-    "productImg": "/images/sample3.png",
+    "productImg": "/images/sample7.png",
     "sub": "[os] 디젤 니트 비니 블랙",
-    "price": 1164000,
+    "price": 2344000,
     "watch": 145,
-    "like": 116
+    "quantity": 1,
+    "like": 11
   },
   {
     "id": 8,
@@ -89,10 +96,11 @@
     "userImg": "/images/user.jpeg",
     "time": 17,
     "productName": "Diesel",
-    "productImg": "/images/sample4.png",
+    "productImg": "/images/sample8.png",
     "sub": "[os] 디젤 니트 비니 블랙",
-    "price": 1234000,
-    "watch": 145,
+    "price": 34000,
+    "quantity": 1,
+    "watch": 14,
     "like": 111
   }
 ]
