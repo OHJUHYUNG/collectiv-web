@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import './Product.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import "./Product.css";
 
 interface Product {
   id: number;
@@ -21,7 +21,7 @@ export function Product() {
 
   function productData() {
     axios
-      .get('/data/product.json', {})
+      .get("/data/product.json", {})
       .then((resultData) => {
         setIsProduct(resultData.data);
       })

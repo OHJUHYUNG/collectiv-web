@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import './Category.css';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import "./Category.css";
+import axios from "axios";
 
 interface CategoryProps {
   id: number;
@@ -12,12 +12,11 @@ interface Category {
 }
 
 export function Category(menu: Category) {
-  const [refresh, setRefresh] = useState(true);
   const [isData, setIsData] = useState<CategoryProps[]>([]);
 
   function fetchData() {
     axios
-      .get('/data/category.json', {})
+      .get("/data/category.json", {})
       .then((result) => {
         setIsData(result.data);
       })
@@ -25,10 +24,8 @@ export function Category(menu: Category) {
   }
 
   useEffect(() => {
-    if (refresh) {
-      fetchData();
-    }
-  }, [refresh]);
+    fetchData();
+  }, []);
 
   return (
     <>
