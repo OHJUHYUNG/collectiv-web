@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Category } from './category/Category';
-import './ProductList.css';
 import { Product } from './product/Product';
+
+import './ProductList.css';
 
 export function ProductList() {
   return (
