@@ -1,6 +1,6 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import './Header.css';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "./Header.css";
 
 interface resultProps {
   id: number;
@@ -12,7 +12,7 @@ export function Header() {
 
   function fetchData() {
     axios
-      .get('/data/sample.json', {})
+      .get("/data/sample.json", {})
       .then((result) => {
         setIsData(result.data);
       })
