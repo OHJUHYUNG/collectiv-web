@@ -1,0 +1,279 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
+.productDetailsWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.productDetailsBox {
+    width: 86.5rem;
+    height: 44.063rem;
+    display: flex;
+    justify-content: center;
+    border: 0.031rem solid #000000;
+}
+
+/* 
+
+.imageFlexBox {
+    display: flex;
+}
+
+.productImage1,
+.productImage2 {
+    width: 400px;
+    height: 705px;
+    object-fit: contain;
+    flex: none;
+} */
+
+
+.productTitleTop {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.656rem 1rem 1.2rem 2.5rem;
+    border-bottom: 0.031rem solid #000000;
+}
+
+.brandName {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-decoration-line: underline;
+    color: #333333;
+}
+
+.productTitle {
+    margin-top: 1rem;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #474C51;
+}
+
+.productTitlePrice {
+    margin: 1rem 0;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #1B1D1E;
+}
+
+
+.updateTime {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #A0A4A8;
+}
+
+.productTitleTopRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.shareImage {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.2rem;
+}
+
+.productStatus {
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.watch,
+.likes {
+    display: flex;
+    align-items: center;
+    margin: 0 0.2rem;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #CACDD1;
+
+}
+
+.watchImage,
+.likesImage {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin: 0 0.2rem;
+    filter: invert(77%) sepia(8%) saturate(279%) hue-rotate(174deg)
+    brightness(95%) contrast(91%);
+}
+
+.productInfoBox {
+    padding: 1.25rem 0 1.25rem 2.5rem;
+    border-bottom: 0.031rem solid #000000;
+
+}
+
+.productInfoTitle {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    color: #333333;
+    margin-bottom: 0.75rem;
+}
+
+.productInfo {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #474C51;
+}
+
+
+.productSizeDetails {
+    display: flex;
+}
+
+.productComments {
+    margin-top: 1.6rem;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40.4rem;
+    height: 1.75rem;
+    background: #F0F0F0;
+    border-bottom: 0.031rem solid #000000;
+}
+
+.bannerText {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #000000;
+}
+
+.bottomBox {
+    height: 18rem;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+
+.sellerInfoBox {
+    padding: 1.063rem 1rem 1.2rem 2.5rem;
+}
+
+.sellerInfoTitle {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: #333333;
+    margin-bottom: 0.875rem;
+}
+
+.sellerInfoDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sellerInfoDetailLeft {
+    display: flex;
+    align-items: center;
+}
+
+.sellerImage {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.75rem;
+}
+
+.sellerDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.sellerName {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.813rem;
+    line-height: 0.813rem;
+    color: #26282B;
+}
+
+.sellerInfo {
+    display: flex;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.813rem;
+    line-height: 1.3rem;
+    color: #A3A6AA;
+    text-align: center;
+}
+
+.sellerGrade{
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+.sales {
+    font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 0.75rem;
+line-height: 0.75rem;
+letter-spacing: -0.02em;
+color: #1B1D1F;
+}
+
+.paymentBtnBox {
+    display: flex;
+    justify-content: center;
+}
+
+.paymentBtn {
+    border: 0;
+    width: 35.6rem;
+    height: 3rem;
+    background: #000000;
+    border-radius: 0.125rem;
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-align: center;
+    color: #FFFFFF;
+}

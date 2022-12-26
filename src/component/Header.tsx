@@ -1,7 +1,7 @@
-import { type } from '@testing-library/user-event/dist/type';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import './Header.css';
+import { type } from "@testing-library/user-event/dist/type";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "./Header.css";
 
 interface HeaderProps {
   title: string;
@@ -19,7 +19,7 @@ export function Header(head: HeaderProps) {
 
   function fetchData() {
     axios
-      .get('/data/sample.json', {})
+      .get("/data/sample.json", {})
       .then((result) => {
         setIsData(result.data);
       })

@@ -1,14 +1,11 @@
 import React from "react";
-import "./component/footer/Footer";
 import Footer from "./component/footer/Footer";
-import Header from './Component/Header';
+import Header from "./component/Header";
+import ProductDetails from "./pages/productDetails/productDetails";
 
 function App() {
   return (
     <div className="App">
-      <footer className="App-footer">
-        <Footer wrapper="" />
-      </footer>
       <header className="App-header">
         <Header
           title=""
@@ -16,6 +13,12 @@ function App() {
           centerText=" 안전 결제 수수료 0원, 판매자 추가 정산 이벤트중"
         />
       </header>
+
+      <ProductDetails />
+
+      <footer className="App-footer">
+        <Footer wrapper="" />
+      </footer>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+{
+    "id": 1,
+    "productImage1": "/images/productImgDiesel.png",
+    "productImage2": "/images/cat.jpeg",
+    "brandName": "Diesel",
+    "productTitle": "[os] 디젤 니트 비니 블랙",
+    "topPrice": 64000,
+    "updateTime": 1,
+    "watch": 3435,
+    "likes": 6,
+    "size": "L",
+    "detailSizeShoulder": 47,
+    "detailSizeChest": 56,
+    "detailSizeArm": 61,
+    "detailSizeTotalLength": 79,
+    "productCondition": "10/8 기본적인 사용감 외 오염 존재",
+    "bottomPrice": 109000,
+    "productComments": "빈티지 제품 특성상 교환 및 환불 불가 필요하신 부분 사진 더 찍어드립니다."
+}
