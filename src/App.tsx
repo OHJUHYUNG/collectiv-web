@@ -1,22 +1,23 @@
 import React from "react";
-import "./component/footer/Footer";
+import { Routes, Route } from "react-router-dom";
 import Footer from "./component/footer/Footer";
-import Header from './Component/Header';
+import Header from "./component/Header";
+import NotFound from "./component/NotFound";
+import ProductList from "./component/productList/ProductList";
 
-function App() {
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <footer className="App-footer">
-        <Footer wrapper="" />
-      </footer>
-      <header className="App-header">
-        <Header
-          title=""
-          rightText="FILL IN YOUR VALUE"
-          centerText=" 안전 결제 수수료 0원, 판매자 추가 정산 이벤트중"
-        />
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/product/list" element={<ProductList />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
+    /*
+    @todo exact오류  router-dom version 문제일듯함
+    */
   );
 }
 
