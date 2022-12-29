@@ -1,32 +1,134 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
 
-.productDetailsWrapper {
+.productDetailWrapper {
     display: flex;
     justify-content: center;
 }
 
-.productDetailsBox {
+.productDetailBox {
     width: 86.5rem;
     height: 44.063rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     border: 0.031rem solid #000000;
 }
 
-/* 
-
-.imageFlexBox {
-    display: flex;
+.carousel {
+    width: 735px;
+    height: 705px;
 }
 
-.productImage1,
-.productImage2 {
-    width: 400px;
-    height: 705px;
-    object-fit: contain;
-    flex: none;
-} */
+.image {
+    width: 45.938rem;
+    height: 44.063rem;
+}
 
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus
+{
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before
+{
+    opacity: 1;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 60px;
+    line-height: 1;
+
+    opacity: .75;
+    color: gray !important;
+
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev
+{
+    left: 10px;
+    z-index: 1;
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    content: '←';
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '→';
+}
+
+.slick-next
+{
+    right: 50px;
+}
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    content: '→';
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '←';
+}
+
+.productDetailRight {
+    border-left: 0.031rem solid #000000;
+}
 
 .productTitleTop {
     display: flex;
@@ -64,7 +166,6 @@
     line-height: 1rem;
     color: #1B1D1E;
 }
-
 
 .updateTime {
     font-family: 'Pretendard';
@@ -146,8 +247,7 @@
     color: #474C51;
 }
 
-
-.productSizeDetails {
+.productSizeDetail {
     display: flex;
 }
 
@@ -196,7 +296,7 @@
     margin-bottom: 0.875rem;
 }
 
-.sellerInfoDetails {
+.sellerInfoDetail {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -213,7 +313,7 @@
     margin-right: 0.75rem;
 }
 
-.sellerDetails {
+.sellerDetail {
     display: flex;
     flex-direction: column;
 }
@@ -250,12 +350,12 @@
 
 .sales {
     font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 0.75rem;
-line-height: 0.75rem;
-letter-spacing: -0.02em;
-color: #1B1D1F;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    letter-spacing: -0.02rem;
+    color: #1B1D1F;
 }
 
 .paymentBtnBox {
@@ -276,4 +376,5 @@ color: #1B1D1F;
     line-height: 1.3rem;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
 }

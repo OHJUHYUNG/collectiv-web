@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./component/footer/Footer";
 import Header from "./component/Header";
-import ProductDetails from "./pages/productDetails/productDetails";
+import ProductDetail from "./pages/productDetail/productDetail";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         />
       </header>
 
-      <ProductDetails />
+      <ProductDetail product={null} />
 
       <footer className="App-footer">
         <Footer wrapper="" />

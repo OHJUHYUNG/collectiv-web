@@ -1,7 +1,31 @@
 {
     "id": 1,
-    "productImage1": "/images/productImgDiesel.png",
-    "productImage2": "/images/cat.jpeg",
+    "productImages": [
+    {
+        "url": "images/1.jpg"
+    },
+    {
+        "url": "images/2.jpg"
+    },
+    {
+        "url": "images/3.jpg"
+    },
+    {
+        "url": "images/4.jpg"
+    },
+    {
+        "url": "images/5.jpg"
+    },
+    {
+        "url": "images/6.jpg"
+    },
+    {
+        "url": "images/7.jpg"
+    },
+    {
+        "url": "images/8.jpg"
+    }
+],    
     "brandName": "Diesel",
     "productTitle": "[os] 디젤 니트 비니 블랙",
     "topPrice": 64000,

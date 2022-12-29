@@ -1,12 +1,18 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-import Carousel from "./Carousel";
-import "./productDetails.css";
+import axios from "axios";
+import Carousel from "../../common/Carousel";
+import "./productDetail.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick-arrow.css";
+
+export interface ProductImage {
+  url: string;
+}
 
 interface Product {
   id: number;
-  productImage1: string;
-  productImage2: string;
+  productImages: ProductImage[];
   brandName: string;
   productTitle: string;
   topPrice: number;
@@ -32,15 +38,25 @@ interface SellerInfo {
   ratings: number;
 }
 
-function ProductDetails() {
+// 이전 페이지에서 데이터 받아올 때
+interface ProductDetailProps {
+  product: Product | null;
+  //pid: string;
+}
+
+const ProductDetail = (props: ProductDetailProps) => {
   const [product, setProduct] = useState<Product | null>(null);
+  const [productImages, setProductImages] = useState<ProductImage[]>([]);
   const [seller, setseller] = useState<SellerInfo | null>(null);
 
   function productData() {
+    console.log("hello");
     axios
       .get("/data/productInfo.json", {})
-      .then((resultData) => {
-        setProduct(resultData.data);
+      .then((result) => {
+        // console.log(result);
+        setProduct(result.data);
+        setProductImages(result.data.productImages);
       })
       .catch(console.error);
   }
@@ -63,27 +79,12 @@ function ProductDetails() {
   }, []);
 
   return (
-    <div className="productDetailsWrapper">
-      <div className="productDetailsBox" key={product?.id}>
-        <div className="productDetailsLeft">
-          <div className="productImageBox">
-            <div className="imageFlexBox">
-              <Carousel />
-              <img
-                className="productImage"
-                src={product?.productImage1}
-                alt="productImage"
-              />
-              <img
-                className="productImage2"
-                src={product?.productImage2}
-                alt="productImage"
-              />
-            </div>
-          </div>
+    <div className="productDetailWrapper">
+      <div className="productDetailBox" key={product?.id}>
+        <div className="productDetailLeft">
+          <Carousel images={productImages} />
         </div>
-
-        <div className="productDetailsRight">
+        <div className="productDetailRight">
           <div className="productTitleTop">
             <div className="productTitleTopLeft">
               <div className="brandName">{product?.brandName}</div>
@@ -126,16 +127,16 @@ function ProductDetails() {
           <div className="productInfoBox">
             <div className="productInfoTitle">상품 설명</div>
             <div className="productInfo">
-              <div className="productSizeDetails">
-                <div className="productSize">size: {product?.size}</div>
+              <div className="productSizeDetail">
+                <div className="productSize">size: {product?.size}&nbsp;</div>
                 <div className="detailSizeShoulder">
-                  (어깨 {product?.detailSizeShoulder}
+                  (어깨 {product?.detailSizeShoulder}&nbsp;
                 </div>
                 <div className="detailSizeChest">
-                  가슴 {product?.detailSizeChest}
+                  가슴 {product?.detailSizeChest}&nbsp;
                 </div>
                 <div className="detailSizeArm">
-                  팔길이 {product?.detailSizeArm}
+                  팔길이 {product?.detailSizeArm}&nbsp;
                 </div>
                 <div className="detailSizeTotalLength">
                   총장 {product?.detailSizeTotalLength})
@@ -163,14 +164,14 @@ function ProductDetails() {
           <div className="bottomBox">
             <div className="sellerInfoBox" key={seller?.id}>
               <div className="sellerInfoTitle">판매자 정보</div>
-              <div className="sellerInfoDetails">
+              <div className="sellerInfoDetail">
                 <div className="sellerInfoDetailLeft">
                   <img
                     className="sellerImage"
                     src={seller?.sellerImg}
                     alt="sellerImage"
                   ></img>
-                  <div className="sellerDetails">
+                  <div className="sellerDetail">
                     <div className="sellerName">{seller?.sellerName}</div>
                     <div className="sellerInfo">
                       <div className="sellersProducts">
@@ -210,6 +211,6 @@ function ProductDetails() {
       </div>
     </div>
   );
-}
+};
 
-export default ProductDetails;
+export default ProductDetail;
