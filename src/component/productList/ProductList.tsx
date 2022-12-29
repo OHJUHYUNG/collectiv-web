@@ -1,14 +1,34 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { Category } from "./category/Category";
 import { Product } from "./product/Product";
-
+import axios from "axios";
 import "./ProductList.css";
 
+export interface CategoryProps {
+  id: number;
+  title: string;
+}
+
 export function ProductList() {
+  const [isData, setIsData] = useState<CategoryProps[]>([]);
+
+  function fetchData() {
+    axios
+      .get("/data/category.json", {})
+      .then((result) => {
+        setIsData(result.data);
+      })
+      .catch(console.error);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="contentWrapper">
-        <Category categoryTitle="카테고리" />
+        <Category />
         <Product />
       </div>
     </>

@@ -11,7 +11,7 @@ interface Category {
   categoryTitle: string;
 }
 
-export function Category(menu: Category) {
+export function Category() {
   const [isData, setIsData] = useState<CategoryProps[]>([]);
 
   function fetchData() {
@@ -32,7 +32,7 @@ export function Category(menu: Category) {
       <div className="contentWrapper">
         <div className="leftSide">
           <div className="categoryWrapper">
-            <div className="categoryTitle">{menu.categoryTitle}</div>
+            <div className="categoryTitle">카테고리</div>
             {isData.map((data) => {
               return (
                 <div className="category" key={data.id}>

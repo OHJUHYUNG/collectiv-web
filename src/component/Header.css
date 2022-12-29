@@ -1,4 +1,4 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css");
 
 .wrapper {
   display: flex;
@@ -33,7 +33,7 @@
   background-color: white;
   font-size: 1rem;
   cursor: pointer;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 400;
 }
 
@@ -44,7 +44,7 @@
 .right {
   width: 7rem;
   height: 1rem;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
   font-size: 0.75rem;

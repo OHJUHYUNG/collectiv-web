@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Product.css";
 
-interface Product {
+interface ProductData {
   id: number;
   userImg: string;
   userId: string;
@@ -14,10 +14,11 @@ interface Product {
   price: number;
   watch: number;
   like: number;
+  kind: number;
 }
 
 export function Product() {
-  const [isProduct, setIsProduct] = useState<Product[]>([]);
+  const [isProduct, setIsProduct] = useState<ProductData[]>([]);
 
   function productData() {
     axios
