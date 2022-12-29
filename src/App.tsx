@@ -15,6 +15,9 @@ function App(): JSX.Element {
       </Routes>
       <Footer />
     </>
+    /*
+    @todo exact오류  router-dom version 문제일듯함
+    */
   );
 }
 
