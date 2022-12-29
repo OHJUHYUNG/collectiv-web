@@ -1,32 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { CategoryProps } from "../ProductList";
 import "./Category.css";
-import axios from "axios";
 
-interface CategoryProps {
-  id: number;
-  title: string;
-}
+export function Category({ isData }: { isData: CategoryProps[] }): JSX.Element {
+  // const [isData, setIsData] = useState<CategoryProps[]>([]);
 
-interface Category {
-  categoryTitle: string;
-}
+  // function fetchData() {
+  //   axios
+  //     .get("/data/category.json", {})
+  //     .then((result) => {
+  //       setIsData(result.data);
+  //     })
+  //     .catch(console.error);
+  // }
 
-export function Category() {
-  const [isData, setIsData] = useState<CategoryProps[]>([]);
-
-  function fetchData() {
-    axios
-      .get("/data/category.json", {})
-      .then((result) => {
-        setIsData(result.data);
-      })
-      .catch(console.error);
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
   return (
     <>
       <div className="contentWrapper">

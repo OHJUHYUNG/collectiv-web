@@ -7,6 +7,7 @@ import "./ProductList.css";
 export interface CategoryProps {
   id: number;
   title: string;
+  isData: [{ id: number; title: string }];
 }
 
 export function ProductList() {
@@ -28,8 +29,8 @@ export function ProductList() {
   return (
     <>
       <div className="contentWrapper">
-        <Category />
-        <Product />
+        <Category isData={isData} />
+        <Product isData={isData} />
       </div>
     </>
   );

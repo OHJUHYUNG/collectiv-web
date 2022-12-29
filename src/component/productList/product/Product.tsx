@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { CategoryProps } from "../ProductList";
 import "./Product.css";
 
 interface ProductData {
@@ -17,7 +18,7 @@ interface ProductData {
   kind: number;
 }
 
-export function Product() {
+export function Product({ isData }: { isData: CategoryProps[] }): JSX.Element {
   const [isProduct, setIsProduct] = useState<ProductData[]>([]);
 
   function productData() {
@@ -32,6 +33,11 @@ export function Product() {
   useEffect(() => {
     productData();
   }, []);
+
+  // function clickCategory() {
+  //   return;
+  //   if ()
+  // }
 
   return (
     <>
