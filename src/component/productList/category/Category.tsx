@@ -3,10 +3,20 @@ import { useParams } from "react-router";
 import { useSearchParams } from "react-router-dom";
 import { idText } from "typescript";
 import ProductContainer, { ProductData } from "../product/ProductContainer";
-import { CategoryProps } from "../ProductList";
+import { CategoryProps, CCategories, CCategory } from "../ProductList";
 import "./Category.css";
 
-export function Category({ isData }: { isData: CategoryProps[] }): JSX.Element {
+
+
+type CategoryProps = {
+  categories: CCategories
+  onClickCategory(cID:number): void
+}
+
+export function Category(props: CategoryProps): JSX.Element {
+
+  const {categories, onClickCategory} = props;
+
   const [selectedId, setSelectedId] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
   const { cate_id } = useParams();
@@ -23,23 +33,22 @@ export function Category({ isData }: { isData: CategoryProps[] }): JSX.Element {
         <div className="leftSide">
           <div className="categoryWrapper">
             <div className="categoryTitle">카테고리</div>
-            {isData.map((data) => {
+            {categories.map((category: CCategory) => {
               return (
                 <div
                   className="category"
-                  key={data.id}
+                  key={category.id}
                   onClick={() => {
-                    console.log(data.id);
+                    onClickCategory(category.id)
                   }}
                 >
-                  {data.title}
+                  {category.title}
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-      <ProductContainer />
     </>
   );
 }

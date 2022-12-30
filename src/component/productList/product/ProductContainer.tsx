@@ -3,23 +3,17 @@ import axios from "axios";
 import { CategoryProps } from "../ProductList";
 import "./ProductContainer.css";
 import { useSearchParams } from "react-router-dom";
+import { getProduct, ProductData } from "../../../Api";
 
-export interface ProductData {
-  id: number;
-  userImg: string;
-  userId: string;
-  time: number;
-  productName: string;
-  productImg: string;
-  quantity: number;
-  sub: string;
-  price: number;
-  watch: number;
-  like: number;
-  category: number;
+
+
+type ProductContainerProps = {
+  cID: number
 }
 
-export function ProductContainer(): JSX.Element {
+export function ProductContainer(props: ProductContainerProps): JSX.Element {
+
+  const {cID} = props;
   //   {
   //   isData,
   // }: {
@@ -28,18 +22,21 @@ export function ProductContainer(): JSX.Element {
   const [isProduct, setIsProduct] = useState<ProductData[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  function productData() {
-    axios
-      .get("/data/product.json", {})
-      .then((resultData) => {
-        setIsProduct(resultData.data);
-      })
-      .catch(console.error);
+  async function productData() {
+    const result = await getProduct(cID)
+
+    setIsProduct(result)
+    // axios
+    //   .get("/data/product.json", {})
+    //   .then((resultData) => {
+    //     setIsProduct(resultData.data);
+    //   })
+    //   .catch(console.error);
   }
 
   useEffect(() => {
-    productData();
-  }, []);
+    productData().then(r => {}).catch();
+  }, [cID]);
 
   return (
     <>
