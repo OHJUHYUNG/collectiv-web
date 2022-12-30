@@ -23,9 +23,7 @@ export function ProductContainer(props: ProductContainerProps): JSX.Element {
   const [searchParams, setSearchParams] = useSearchParams();
 
   async function productData() {
-    const result = await getProduct(cID)
-
-    setIsProduct(result)
+    return await getProduct(cID)
     // axios
     //   .get("/data/product.json", {})
     //   .then((resultData) => {
@@ -35,7 +33,8 @@ export function ProductContainer(props: ProductContainerProps): JSX.Element {
   }
 
   useEffect(() => {
-    productData().then(r => {}).catch();
+    productData().then(r => {setIsProduct(r);
+    }).catch();
   }, [cID]);
 
   return (

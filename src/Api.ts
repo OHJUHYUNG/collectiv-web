@@ -129,8 +129,11 @@ const data = [
 ]
 
 export async function getProduct(cID: number): Promise<ProductData[]> {
-
   let returnValue: ProductData[] = []
+
+  if(cID === 1){
+    return data;
+  }
 
   for(let i = 0 ; i < data.length ; i++){
     if(data[i].category === cID){
