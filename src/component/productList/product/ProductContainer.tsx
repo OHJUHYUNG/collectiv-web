@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { CategoryProps } from "../ProductList";
-import "./Product.css";
+import "./ProductContainer.css";
+import { useSearchParams } from "react-router-dom";
 
-interface ProductData {
+export interface ProductData {
   id: number;
   userImg: string;
   userId: string;
@@ -15,11 +16,17 @@ interface ProductData {
   price: number;
   watch: number;
   like: number;
-  kind: number;
+  category: number;
 }
 
-export function Product({ isData }: { isData: CategoryProps[] }): JSX.Element {
+export function ProductContainer(): JSX.Element {
+  //   {
+  //   isData,
+  // }: {
+  //   isData: CategoryProps[];
+  // }
   const [isProduct, setIsProduct] = useState<ProductData[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   function productData() {
     axios
@@ -33,11 +40,6 @@ export function Product({ isData }: { isData: CategoryProps[] }): JSX.Element {
   useEffect(() => {
     productData();
   }, []);
-
-  // function clickCategory() {
-  //   return;
-  //   if ()
-  // }
 
   return (
     <>
@@ -104,4 +106,4 @@ export function Product({ isData }: { isData: CategoryProps[] }): JSX.Element {
   );
 }
 
-export default Product;
+export default ProductContainer;
