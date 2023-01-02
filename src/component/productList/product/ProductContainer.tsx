@@ -1,37 +1,36 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./Product.css";
+import "./ProductContainer.css";
+import { useSearchParams } from "react-router-dom";
+import { getProduct, ProductData } from "../../../Api";
 
-interface ProductData {
-  id: number;
-  userImg: string;
-  userId: string;
-  time: number;
-  productName: string;
-  productImg: string;
-  quantity: number;
-  sub: string;
-  price: number;
-  watch: number;
-  like: number;
-  kind: number;
-}
+type ProductContainerProps = {
+  cID: number;
+};
 
-export function Product() {
+export function ProductContainer(props: ProductContainerProps): JSX.Element {
+  const { cID } = props;
+
   const [isProduct, setIsProduct] = useState<ProductData[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  function productData() {
-    axios
-      .get("/data/product.json", {})
-      .then((resultData) => {
-        setIsProduct(resultData.data);
-      })
-      .catch(console.error);
+  async function productData() {
+    return await getProduct(cID);
+    // axios
+    //   .get("/data/product.json", {})
+    //   .then((resultData) => {
+    //     setIsProduct(resultData.data);
+    //   })
+    //   .catch(console.error);
   }
 
   useEffect(() => {
-    productData();
-  }, []);
+    productData()
+      .then((r) => {
+        setIsProduct(r);
+      })
+      .catch();
+  }, [cID]);
 
   return (
     <>
@@ -98,4 +97,4 @@ export function Product() {
   );
 }
 
-export default Product;
+export default ProductContainer;

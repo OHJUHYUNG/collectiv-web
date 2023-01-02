@@ -2,10 +2,12 @@
   margin-top: 6.373rem;
   width: 6.25rem;
   margin-right: 1.625rem;
+  position: relative;
 }
 
 .categoryWrapper {
-  font-family: 'Pretendard';
+  position: absolute;
+  font-family: "Pretendard";
   display: flex;
   flex-direction: column;
   justify-content: center;

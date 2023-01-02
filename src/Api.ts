@@ -1,4 +1,19 @@
-[
+export interface ProductData {
+  id: number;
+  userImg: string;
+  userId: string;
+  time: number;
+  productName: string;
+  productImg: string;
+  quantity: number;
+  sub: string;
+  price: number;
+  watch: number;
+  like: number;
+  category: number;
+}
+
+const data = [
   {
     "id": 1,
     "category": 8,
@@ -112,3 +127,19 @@
     "like": 111
   }
 ]
+
+export async function getProduct(cID: number): Promise<ProductData[]> {
+  let returnValue: ProductData[] = []
+
+  if(cID === 1){
+    return data;
+  }
+
+  for(let i = 0 ; i < data.length ; i++){
+    if(data[i].category === cID){
+      returnValue.push(data[i]);
+    }
+  }
+
+  return returnValue
+}

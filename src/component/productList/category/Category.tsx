@@ -1,42 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
+import { idText } from "typescript";
+import ProductContainer from "../product/ProductContainer";
+import { CCategories, CCategory } from "../ProductList";
 import "./Category.css";
-import axios from "axios";
 
-interface CategoryProps {
-  id: number;
-  title: string;
-}
+type CategoryProps = {
+  categories: CCategories;
+  onClickCategory(cID: number): void;
+};
 
-interface Category {
-  categoryTitle: string;
-}
+export function Category(props: CategoryProps): JSX.Element {
+  const { categories, onClickCategory } = props;
 
-export function Category() {
-  const [isData, setIsData] = useState<CategoryProps[]>([]);
+  const [selectedId, setSelectedId] = useState();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { cate_id } = useParams();
 
-  function fetchData() {
-    axios
-      .get("/data/category.json", {})
-      .then((result) => {
-        setIsData(result.data);
-      })
-      .catch(console.error);
+  function handleBtn(id: number & string) {
+    setSelectedId(id);
   }
+  // const category = isData[0];
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  // console.log(category);
   return (
     <>
       <div className="contentWrapper">
         <div className="leftSide">
           <div className="categoryWrapper">
             <div className="categoryTitle">카테고리</div>
-            {isData.map((data) => {
+            {categories.map((category: CCategory) => {
               return (
-                <div className="category" key={data.id}>
-                  {data.title}
+                <div
+                  className="category"
+                  key={category.id}
+                  onClick={() => {
+                    onClickCategory(category.id);
+                  }}
+                >
+                  {category.title}
                 </div>
               );
             })}
