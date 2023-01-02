@@ -26,21 +26,6 @@ const Carousel = (props: CarouselProps) => {
       );
     },
     dotsClass: "dots_custom",
-
-    // customPaging: (i: number) => {
-    //   console.log("i:: ", i);
-    //   return (
-    //     <div
-    //       style={{
-    //         width: "30px",
-    //         color: "blue",
-    //         border: "1px blue solid",
-    //       }}
-    //     >
-    //       {i + 1}
-    //     </div>
-    //   );
-    // },
   };
 
   return (
@@ -50,7 +35,7 @@ const Carousel = (props: CarouselProps) => {
           return (
             <div className="productImageBox" key={index}>
               <img
-                className="image"
+                className="carouselImage"
                 src={item.url}
                 alt="images"
                 style={{ position: "relative" }}

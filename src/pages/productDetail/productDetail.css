@@ -18,7 +18,7 @@
     height: 705px;
 }
 
-.image {
+.carouselImage {
     width: 45.938rem;
     height: 44.063rem;
 }
@@ -251,19 +251,29 @@ ul {
     margin-bottom: 0.75rem;
 }
 
-.productInfo {
-    font-family: 'Pretendard';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-    color: #474C51;
-}
-
 .productSizeDetail {
     display: flex;
 }
 
+.productInfoTitle,
+.productSizeDetail,
+.productCondition,
+.productPrice,
+.productShipping,
+.productComments {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.523rem;
+    color: #474C51;
+}
+
+.productInfoTitle {
+    font-weight: 600;
+    line-height: 1.05rem;
+    color: #333333;
+}
 .productComments {
     margin-top: 1.6rem;
 }
@@ -288,7 +298,7 @@ ul {
 }
 
 .bottomBox {
-    height: 18rem;
+    height: 15.5rem;
     display: flex; 
     flex-direction: column;
     justify-content: space-between; 

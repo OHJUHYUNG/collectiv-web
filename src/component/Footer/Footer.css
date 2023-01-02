@@ -18,7 +18,7 @@
   margin-top: 100px;
 }
 
-.leftContents {
+.footerLeftContents {
   width: 700px;
 }
 
@@ -136,7 +136,7 @@
   margin-top: 10px;
 }
 
-.rightContents {
+.footerRightContents {
   display: flex;
   flex-direction: column;
   align-items: end;

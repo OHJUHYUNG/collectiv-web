@@ -39,14 +39,17 @@ interface SellerInfo {
 
 // 이전 페이지에서 데이터 받아올 때
 interface ProductDetailProps {
-  product: Product | null;
-  //pid: string;
+  // product: Product | null;
+  id: number;
 }
 
-const ProductDetail = (props: ProductDetailProps) => {
+const ProductDetail = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [productImages, setProductImages] = useState<ProductImage[]>([]);
   const [seller, setseller] = useState<SellerInfo | null>(null);
+
+  // const params = useParams();
+  // const productId = params.id;
 
   function productData() {
     axios
@@ -63,6 +66,8 @@ const ProductDetail = (props: ProductDetailProps) => {
       )
       .catch(console.error);
   }
+
+  console.log(product);
 
   useEffect(() => {
     productData();

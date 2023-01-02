@@ -8,7 +8,7 @@ interface FooterProps {
 const Footer = () => {
   return (
     <footer className="footerWrapper">
-      <section className="leftContents">
+      <section className="footerLeftContents">
         <div className="serviceCenter">고객센터</div>
         <div className="operatingTimeInfo">
           <div className="operatingTime">
@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="privacyStatement">개인정보 처리 방침</div>
       </section>
 
-      <section className="rightContents">
+      <section className="footerRightContents">
         <div className="bottomLogo" />
         <div className="companyInfo">
           <p>크레이빙콜렉터 주식회사┃대표이사: 이은비</p>
