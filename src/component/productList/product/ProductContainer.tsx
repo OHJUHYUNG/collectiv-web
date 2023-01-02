@@ -1,29 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { CategoryProps } from "../ProductList";
 import "./ProductContainer.css";
 import { useSearchParams } from "react-router-dom";
 import { getProduct, ProductData } from "../../../Api";
 
-
-
 type ProductContainerProps = {
-  cID: number
-}
+  cID: number;
+};
 
 export function ProductContainer(props: ProductContainerProps): JSX.Element {
+  const { cID } = props;
 
-  const {cID} = props;
-  //   {
-  //   isData,
-  // }: {
-  //   isData: CategoryProps[];
-  // }
   const [isProduct, setIsProduct] = useState<ProductData[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   async function productData() {
-    return await getProduct(cID)
+    return await getProduct(cID);
     // axios
     //   .get("/data/product.json", {})
     //   .then((resultData) => {
@@ -33,8 +25,11 @@ export function ProductContainer(props: ProductContainerProps): JSX.Element {
   }
 
   useEffect(() => {
-    productData().then(r => {setIsProduct(r);
-    }).catch();
+    productData()
+      .then((r) => {
+        setIsProduct(r);
+      })
+      .catch();
   }, [cID]);
 
   return (

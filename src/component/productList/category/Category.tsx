@@ -2,20 +2,17 @@ import React, { useState } from "react";
 import { useParams } from "react-router";
 import { useSearchParams } from "react-router-dom";
 import { idText } from "typescript";
-import ProductContainer, { ProductData } from "../product/ProductContainer";
-import { CategoryProps, CCategories, CCategory } from "../ProductList";
+import ProductContainer from "../product/ProductContainer";
+import { CCategories, CCategory } from "../ProductList";
 import "./Category.css";
 
-
-
 type CategoryProps = {
-  categories: CCategories
-  onClickCategory(cID:number): void
-}
+  categories: CCategories;
+  onClickCategory(cID: number): void;
+};
 
 export function Category(props: CategoryProps): JSX.Element {
-
-  const {categories, onClickCategory} = props;
+  const { categories, onClickCategory } = props;
 
   const [selectedId, setSelectedId] = useState();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,7 +36,7 @@ export function Category(props: CategoryProps): JSX.Element {
                   className="category"
                   key={category.id}
                   onClick={() => {
-                    onClickCategory(category.id)
+                    onClickCategory(category.id);
                   }}
                 >
                   {category.title}

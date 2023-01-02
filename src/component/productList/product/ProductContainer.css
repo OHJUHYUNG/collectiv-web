@@ -4,6 +4,8 @@
   flex-wrap: wrap;
   margin: 3.873rem auto;
   padding-right: 0;
+  width: 81.25rem;
+  min-height: 50rem;
 }
 
 .productWrapper {
@@ -23,7 +25,7 @@
 .userId {
   display: flex;
   align-items: center;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 400;
   font-size: 0.688rem;
   line-height: 0.688rem;
@@ -40,7 +42,7 @@
 }
 
 .time {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 400;
   font-size: 0.625rem;
   line-height: 0.625rem;
@@ -106,7 +108,7 @@
 }
 
 .productTitle {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 700;
   font-size: 0.688rem;
   line-height: 0.825rem;
@@ -114,7 +116,7 @@
 }
 
 .productSub {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 400;
   font-size: 0.688rem;
   line-height: 0.791rem;
@@ -122,7 +124,7 @@
 }
 
 .productPrice {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 600;
   font-size: 0.688rem;
   line-height: 0.825rem;
@@ -130,7 +132,7 @@
 }
 
 .watchLike {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 500;
   font-size: 0.625rem;
   color: #b1b8c1;

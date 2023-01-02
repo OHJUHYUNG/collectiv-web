@@ -5,17 +5,16 @@ import axios from "axios";
 import "./ProductList.css";
 
 export type CCategory = {
-  id: number,
-  title: string,
-}
+  id: number;
+  title: string;
+};
 
-export type CCategories = CCategory[]
-
+export type CCategories = CCategory[];
 
 export function ProductList() {
   const [categories, setCategories] = useState<CCategories>([]);
 
-  const [clickedCategory, setClickedCategory] = useState<number>(1)
+  const [clickedCategory, setClickedCategory] = useState<number>(1);
 
   function fetchData() {
     axios
@@ -37,8 +36,8 @@ export function ProductList() {
   return (
     <>
       <div className="contentWrapper">
-        <Category categories={categories} onClickCategory={onClickCategory}/>
-        <ProductContainer cID={clickedCategory}/>
+        <Category categories={categories} onClickCategory={onClickCategory} />
+        <ProductContainer cID={clickedCategory} />
       </div>
     </>
   );
