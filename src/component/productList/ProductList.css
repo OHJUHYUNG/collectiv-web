@@ -1,0 +1,9 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
+.contentWrapper {
+  max-width: 90rem;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}

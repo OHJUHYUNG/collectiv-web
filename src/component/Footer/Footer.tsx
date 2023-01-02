@@ -5,7 +5,7 @@ interface FooterProps {
   wrapper: string;
 }
 
-const Footer = (foot: FooterProps) => {
+const Footer = () => {
   return (
     <footer className="footerWrapper">
       <section className="leftContents">

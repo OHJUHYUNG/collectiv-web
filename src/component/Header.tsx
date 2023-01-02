@@ -1,20 +1,13 @@
-import { type } from "@testing-library/user-event/dist/type";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./Header.css";
 
-interface HeaderProps {
-  title: string;
-  rightText: string;
-  centerText: string;
-}
-
-type resultProps = {
+interface resultProps {
   id: number;
   title: string;
-};
+}
 
-export function Header(head: HeaderProps) {
+export function Header() {
   const [isData, setIsData] = useState<resultProps[]>([]);
 
   function fetchData() {
@@ -46,11 +39,13 @@ export function Header(head: HeaderProps) {
           })}
         </div>
         <div className="right">
-          <div className="rightText">{head.rightText}</div>
+          <div className="rightText">FILL IN YOUR VALUE</div>
         </div>
       </div>
       <div className="bottom">
-        <div className="bottomText">{head.centerText}</div>
+        <div className="bottomText">
+          안전 결제 수수료 0원, 판매자 추가 정산 이벤트중
+        </div>
       </div>
     </>
   );

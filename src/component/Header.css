@@ -1,67 +1,67 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css");
 
 .wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 49px;
+  height: 3.063rem;
   margin: 0 auto;
+  max-width: 120rem;
 }
 
 .logo {
-  width: 96px;
-  height: 19px;
+  width: 6rem;
+  height: 1.188rem;
 }
 
 .img {
-  width: 96px;
-  height: 19px;
+  width: 6rem;
+  height: 1.188rem;
 }
 
 .title {
   display: flex;
   justify-content: space-around;
   text-align: center;
-  width: 400px;
+  width: 363px;
 }
 
 .menu {
-  line-height: 20.8px;
-  height: 49px;
+  line-height: 1.3rem;
+  height: 3.063rem;
   border: none;
   background-color: white;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-weight: 400;
 }
 
 .menu:hover {
-  border-bottom: 2px solid black;
+  border-bottom: 0.125rem solid black;
 }
 
 .right {
-  width: 112px;
-  height: 16px;
-  font-family: 'Pretendard';
+  width: 7rem;
+  height: 1rem;
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 15.6px;
+  font-size: 0.75rem;
+  line-height: 0.975rem;
 }
 
 .bottom {
   background-color: #ff4664;
   text-align: center;
-  height: 27px;
-  top: 48px;
-  border-top: 1px solid black;
+  height: 1.688rem;
+  top: 3rem;
+  border-top: 0.063rem solid black;
 }
 
 .bottomText {
-  padding: 5px;
+  padding: 0.313rem;
   color: white;
-  font-size: 12px;
-  line-height: 15.6px;
+  font-size: 0.75rem;
+  line-height: 0.975rem;
 }
