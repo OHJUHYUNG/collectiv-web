@@ -4,7 +4,6 @@ import Carousel from "../../common/Carousel";
 import "./productDetail.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import "slick-carousel/slick/slick-arrow.css";
 
 export interface ProductImage {
   url: string;
@@ -50,32 +49,23 @@ const ProductDetail = (props: ProductDetailProps) => {
   const [seller, setseller] = useState<SellerInfo | null>(null);
 
   function productData() {
-    console.log("hello");
     axios
-      .get("/data/productInfo.json", {})
-      .then((result) => {
-        // console.log(result);
-        setProduct(result.data);
-        setProductImages(result.data.productImages);
-      })
+      .all([
+        axios.get("/data/productInfo.json"),
+        axios.get("/data/sellerInfo.json"),
+      ])
+      .then(
+        axios.spread((product: any, seller: any) => {
+          setProduct(product.data);
+          setProductImages(product.data.productImages);
+          setseller(seller.data);
+        })
+      )
       .catch(console.error);
   }
 
   useEffect(() => {
     productData();
-  }, []);
-
-  function sellerData() {
-    axios
-      .get("/data/sellerInfo.json", {})
-      .then((resultData) => {
-        setseller(resultData.data);
-      })
-      .catch(console.error);
-  }
-
-  useEffect(() => {
-    sellerData();
   }, []);
 
   return (

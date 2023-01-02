@@ -15,10 +15,7 @@ function App() {
       </header>
 
       <ProductDetail product={null} />
-
-      <footer className="App-footer">
-        <Footer wrapper="" />
-      </footer>
+      <Footer wrapper="" />
     </div>
   );
 }

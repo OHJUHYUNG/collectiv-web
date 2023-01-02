@@ -25,25 +25,19 @@
 
 /* Arrows */
 .slick-prev,
-.slick-next
-{
+.slick-next {
     font-size: 0;
     line-height: 0;
-
     position: absolute;
     top: 50%;
-
     display: block;
-
     width: 20px;
     height: 20px;
     padding: 0;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-
     cursor: pointer;
-
     color: transparent;
     border: none;
     outline: none;
@@ -75,18 +69,21 @@
 }
 
 .slick-prev:before,
-.slick-next:before
-{
+.slick-next:before {
     font-family: 'slick';
-    font-size: 60px;
     line-height: 1;
-
     opacity: .75;
-    color: gray !important;
-
-
+    color: pink !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev:before {
+    content: url(/public/images/leftBtn.png);
+}
+
+.slick-prev:before {
+    content: url(/public/images/rightBtn.png);
 }
 
 .slick-prev
@@ -99,31 +96,47 @@
     right: -25px;
     left: auto;
 }
-.slick-prev:before
-{
-    content: '←';
-}
-[dir='rtl'] .slick-prev:before
-{
-    content: '→';
-}
 
 .slick-next
 {
-    right: 50px;
+    right: 20px;
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
     left: -25px;
 }
-.slick-next:before
-{
-    content: '→';
+
+.slick-prev:before {
+    content: url(/public/images/leftBtn.png);
 }
-[dir='rtl'] .slick-next:before
-{
-    content: '←';
+
+.slick-next:before {
+    content: url(/public/images/rightBtn.png);
+}
+
+/* dots */
+
+.dots_custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 6.25rem;
+    width: 2.5rem;
+    height: 1.5rem;
+}
+
+ul {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.688rem;
+    line-height: 0.688rem;
+    color: #FFFFFF;
 }
 
 .productDetailRight {
