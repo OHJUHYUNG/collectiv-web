@@ -45,52 +45,58 @@ interface ProductDetailProps {
   id?: number;
 }
 
-const ProductDetail = (props: ProductDetailProps): JSX.Element => {
+const ProductDetail = (props: ProductDetailProps) => {
   const [product, setProduct] = useState<Product | null>(null);
   const [productImages, setProductImages] = useState<ProductImage[]>([]);
   const [seller, setSeller] = useState<SellerInfo | null>(null);
 
   function productData() {
     axios
-      .all([
-        axios.get("/data/productInfo.json"),
-        axios.get("/data/sellerInfo.json"),
-      ])
-      .then(
-        axios.spread((product: any, seller: any) => {
-          setProduct(product.data);
-          setProductImages(product.data.productImages);
-          setSeller(seller.data);
-        })
-      )
+      .get("/data/productInfo.json", {})
+      .then((product) => {
+        setProduct(product.data);
+        setProductImages(product.data.productImages);
+      })
       .catch(console.error);
   }
 
   useEffect(() => {
     productData();
+  }, []);
 
-    if (!product) {
-      return console.log("data is null");
-    }
-  }, [product]);
+  function sellerData() {
+    axios
+      .get("/data/sellerInfo.json", {})
+      .then((seller) => {
+        setSeller(seller.data);
+      })
+      .catch(console.error);
+  }
+
+  useEffect(() => {
+    sellerData();
+  }, []);
+
+  if (!product || !seller) {
+    return null;
+  }
 
   return (
     <div className="productDetailWrapper">
-      <div className="productDetailBox" key={product?.id}>
+      <div className="productDetailBox" key={product.id}>
         <div className="productDetailLeft">
           <Carousel images={productImages} />
         </div>
         <div className="productDetailRight">
           <div className="productTitleTop">
             <div className="productTitleTopLeft">
-              <div className="brandName">{product?.brandName}</div>
-              <div className="productTitle">{product?.productTitle}</div>
+              <div className="brandName">{product.brandName}</div>
+              <div className="productTitle">{product.productTitle}</div>
               <div className="productTitlePrice">
-                {product?.topPrice.toLocaleString()}원
+                {product.topPrice.toLocaleString()}원
               </div>
-              <div className="updateTime">{product?.updateTime}분 전</div>
+              <div className="updateTime">{product.updateTime}분 전</div>
             </div>
-
             <div className="productTitleTopRight">
               <button className="shareBtn">
                 <img
@@ -100,54 +106,53 @@ const ProductDetail = (props: ProductDetailProps): JSX.Element => {
                 />
               </button>
               <div className="productStatus">
-                <div className="watch">
+                <div className="watchIcon">
                   <img
                     className="watchImage"
                     src="/images/watch.png"
                     alt="watchImage"
                   />
-                  {product?.watch.toLocaleString()}
+                  {product.watch.toLocaleString()}
                 </div>
-                <div className="likes">
+                <div className="likesIcon">
                   <img
                     className="likesImage"
                     src="/images/likes.png"
                     alt="likesImage"
                   />
-                  {product?.likes.toLocaleString()}
+                  {product.likes.toLocaleString()}
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="productInfoBox">
+          <div className="productInfoWrapper">
             <div className="productInfoTitle">상품 설명</div>
-            <div className="productInfo">
+            <div className="productInfoBox">
               <div className="productSizeDetail">
-                <div className="productSize">size: {product?.size}&nbsp;</div>
+                <div className="productSize">size: {product.size}&nbsp;</div>
                 <div className="detailSizeShoulder">
-                  (어깨 {product?.detailSizeShoulder}&nbsp;
+                  (어깨 {product.detailSizeShoulder}&nbsp;
                 </div>
                 <div className="detailSizeChest">
-                  가슴 {product?.detailSizeChest}&nbsp;
+                  가슴 {product.detailSizeChest}&nbsp;
                 </div>
                 <div className="detailSizeArm">
-                  팔길이 {product?.detailSizeArm}&nbsp;
+                  팔길이 {product.detailSizeArm}&nbsp;
                 </div>
                 <div className="detailSizeTotalLength">
-                  총장 {product?.detailSizeTotalLength})
+                  총장 {product.detailSizeTotalLength})
                 </div>
               </div>
               <div className="productCondition">
-                Condition: {product?.productCondition}
+                Condition: {product.productCondition}
               </div>
               <div className="productPrice">
-                Price: ₩{product?.bottomPrice.toLocaleString()}
+                Price: ₩{product.bottomPrice.toLocaleString()}
               </div>
               <div className="productShipping">
                 배송비+3,000원, 제주/산간 6,000원
               </div>
-              <div className="productComments">{product?.productComments}</div>
+              <div className="productComments">{product.productComments}</div>
             </div>
           </div>
           <div className="banner">
@@ -156,24 +161,23 @@ const ProductDetail = (props: ProductDetailProps): JSX.Element => {
             </div>
           </div>
           <div className="bottomBox">
-            <div className="sellerInfoBox" key={seller?.id}>
+            <div className="sellerInfoBox" key={seller.id}>
               <div className="sellerInfoTitle">판매자 정보</div>
               <div className="sellerInfoDetail">
                 <div className="sellerInfoDetailLeft">
                   <img
                     className="sellerImage"
-                    src={seller?.sellerImg}
+                    src={seller.sellerImg}
                     alt="sellerImage"
                   ></img>
                   <div className="sellerDetail">
-                    <div className="sellerName">{seller?.sellerName}</div>
+                    <div className="sellerName">{seller.sellerName}</div>
                     <div className="sellerInfo">
                       <div className="sellersProducts">
-                        상품 수 {seller?.sellersProducts.toLocaleString()}개
+                        상품 수 {seller.sellersProducts.toLocaleString()}개
                       </div>
                       <div className="sellersTransactions">
-                        ∙ 거래수 {seller?.sellersTransactions.toLocaleString()}
-                        개
+                        ∙ 거래수 {seller.sellersTransactions.toLocaleString()}개
                       </div>
                     </div>
                   </div>
@@ -188,10 +192,10 @@ const ProductDetail = (props: ProductDetailProps): JSX.Element => {
                         <img src="/images/full.png" className="icon" />
                       }
                       readonly
-                      initialRating={seller?.starRatings}
+                      initialRating={seller.starRatings}
                     />
                     <div className="sales">
-                      ({seller?.ratings.toLocaleString()})
+                      ({seller.ratings.toLocaleString()})
                     </div>
                   </div>
                 </div>

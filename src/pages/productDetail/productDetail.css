@@ -23,7 +23,6 @@
     height: 44.063rem;
 }
 
-/* Arrows */
 .slick-prev,
 .slick-next {
     font-size: 0;
@@ -114,8 +113,6 @@
 .slick-next:before {
     content: url(/public/images/rightBtn.png);
 }
-
-/* dots */
 
 .dots_custom {
     display: flex;
@@ -218,8 +215,8 @@ ul {
     text-align: center;
 }
 
-.watch,
-.likes {
+.watchIcon,
+.likesIcon {
     display: flex;
     align-items: center;
     margin: 0 0.2rem;
@@ -229,7 +226,6 @@ ul {
     font-size: 0.75rem;
     line-height: 1rem;
     color: #CACDD1;
-
 }
 
 .watchImage,
@@ -241,10 +237,9 @@ ul {
     brightness(95%) contrast(91%);
 }
 
-.productInfoBox {
+.productInfoWrapper {
     padding: 1.25rem 0 1.25rem 2.5rem;
     border-bottom: 0.031rem solid #000000;
-
 }
 
 .productInfoTitle {
@@ -385,8 +380,6 @@ ul {
 
 .icon {
     width: 0.75rem;
-    pointer-events: none;
-    
 }
 
 .sales {
