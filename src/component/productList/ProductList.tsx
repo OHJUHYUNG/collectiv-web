@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Category } from "./category/Category";
-import { Product } from "./product/Product";
+import { ProductContainer } from "./product/ProductContainer";
 import axios from "axios";
 import "./ProductList.css";
 
-export interface CategoryProps {
+export type CCategory = {
   id: number;
   title: string;
-}
+};
+
+export type CCategories = CCategory[];
 
 export function ProductList() {
-  const [isData, setIsData] = useState<CategoryProps[]>([]);
+  const [categories, setCategories] = useState<CCategories>([]);
+  const [clickedCategory, setClickedCategory] = useState<number>(1);
 
   function fetchData() {
     axios
       .get("/data/category.json", {})
       .then((result) => {
-        setIsData(result.data);
+        setCategories(result.data);
       })
       .catch(console.error);
   }
@@ -25,11 +28,15 @@ export function ProductList() {
     fetchData();
   }, []);
 
+  function onClickCategory(cID: number) {
+    setClickedCategory(cID);
+  }
+
   return (
     <>
       <div className="contentWrapper">
-        <Category />
-        <Product />
+        <Category categories={categories} onClickCategory={onClickCategory} />
+        <ProductContainer cID={clickedCategory} />
       </div>
     </>
   );

@@ -1,43 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { CCategories, CCategory } from "../ProductList";
 import "./Category.css";
-import axios from "axios";
 
-interface CategoryProps {
-  id: number;
-  title: string;
-}
+type CategoryProps = {
+  categories: CCategories;
+  onClickCategory(cID: number): void;
+};
 
-interface Category {
-  categoryTitle: string;
-}
-
-export function Category() {
-  const [isData, setIsData] = useState<CategoryProps[]>([]);
-
-  function fetchData() {
-    axios
-      .get("/data/category.json", {})
-      .then((result) => {
-        setIsData(result.data);
-      })
-      .catch(console.error);
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+export function Category(props: CategoryProps): JSX.Element {
+  const { categories, onClickCategory } = props;
 
   return (
     <>
-      <div className="contentWrapper">
+      <div className="category">
         <div className="leftSide">
           <div className="categoryWrapper">
             <div className="categoryTitle">카테고리</div>
-            {isData.map((data) => {
+            {categories.map((category: CCategory) => {
               return (
-                <div className="category" key={data.id}>
-                  {data.title}
-                </div>
+                <button
+                  className="category"
+                  key={category.id}
+                  onClick={() => {
+                    onClickCategory(category.id);
+                  }}
+                >
+                  {category.title}
+                </button>
               );
             })}
           </div>
