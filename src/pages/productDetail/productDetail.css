@@ -299,7 +299,7 @@ ul {
 }
 
 .bottomBox {
-    height: 15.5rem;
+    height: 18rem;
     display: flex; 
     flex-direction: column;
     justify-content: space-between; 
