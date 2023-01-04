@@ -13,7 +13,6 @@ export type CCategories = CCategory[];
 
 export function ProductList() {
   const [categories, setCategories] = useState<CCategories>([]);
-
   const [clickedCategory, setClickedCategory] = useState<number>(1);
 
   function fetchData() {

@@ -2,10 +2,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 3.873rem auto;
+  margin: 3.873rem 2.25rem;
   padding-right: 0;
-  width: 81.25rem;
+  width: 75rem;
   min-height: 50rem;
+}
+
+.link {
+  text-decoration: none;
 }
 
 .productWrapper {
