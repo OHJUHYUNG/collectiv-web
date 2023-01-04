@@ -18,7 +18,6 @@ const Carousel = (props: CarouselProps) => {
     speed: 500,
     beforeChange: (current: any, next: any) => setCurrentSlick(next),
     appendDots: (dots: any) => {
-      console.log(dots);
       return (
         <div>
           <ul>{currentSlick + 1 + "/" + dots.length}</ul>

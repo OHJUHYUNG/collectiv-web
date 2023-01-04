@@ -199,6 +199,12 @@ ul {
     align-items: flex-end;
 }
 
+.shareBtn {
+    border: 0;
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
 .shareImage {
     width: 1rem;
     height: 1rem;
@@ -334,6 +340,8 @@ ul {
     width: 2.5rem;
     height: 2.5rem;
     margin-right: 0.75rem;
+    border-radius: 6.25rem;
+    border: 1px solid black;
 }
 
 .sellerDetail {
@@ -371,6 +379,16 @@ ul {
     height: 0.75rem;
 }
 
+.link {
+    text-decoration: none;
+}
+
+.icon {
+    width: 0.75rem;
+    pointer-events: none;
+    
+}
+
 .sales {
     font-family: 'Pretendard';
     font-style: normal;
@@ -379,6 +397,7 @@ ul {
     line-height: 0.75rem;
     letter-spacing: -0.02rem;
     color: #1B1D1F;
+    margin-left: 0.188rem;
 }
 
 .paymentBtnBox {

@@ -21,9 +21,7 @@ export function Category(props: CategoryProps): JSX.Element {
   function handleBtn(id: number & string) {
     setSelectedId(id);
   }
-  // const category = isData[0];
 
-  // console.log(category);
   return (
     <>
       <div className="contentWrapper">

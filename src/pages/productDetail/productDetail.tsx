@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Carousel from "../../common/Carousel";
 import "./productDetail.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Rating from "react-rating";
+import StarRatingComponent from "react-star-rating-component";
 
 export interface ProductImage {
   url: string;
@@ -34,22 +38,20 @@ interface SellerInfo {
   sellerName: string;
   sellersProducts: number;
   sellersTransactions: number;
+  starRatings: number;
   ratings: number;
 }
 
 // 이전 페이지에서 데이터 받아올 때
 interface ProductDetailProps {
   // product: Product | null;
-  id: number;
+  id?: number;
 }
 
-const ProductDetail = () => {
+const ProductDetail = (props: ProductDetailProps): JSX.Element => {
   const [product, setProduct] = useState<Product | null>(null);
   const [productImages, setProductImages] = useState<ProductImage[]>([]);
-  const [seller, setseller] = useState<SellerInfo | null>(null);
-
-  // const params = useParams();
-  // const productId = params.id;
+  const [seller, setSeller] = useState<SellerInfo | null>(null);
 
   function productData() {
     axios
@@ -61,17 +63,19 @@ const ProductDetail = () => {
         axios.spread((product: any, seller: any) => {
           setProduct(product.data);
           setProductImages(product.data.productImages);
-          setseller(seller.data);
+          setSeller(seller.data);
         })
       )
       .catch(console.error);
   }
 
-  console.log(product);
-
   useEffect(() => {
     productData();
-  }, []);
+
+    if (!product) {
+      return console.log("data is null");
+    }
+  }, [product]);
 
   return (
     <div className="productDetailWrapper">
@@ -91,13 +95,13 @@ const ProductDetail = () => {
             </div>
 
             <div className="productTitleTopRight">
-              <div className="shareBtn">
+              <button className="shareBtn">
                 <img
                   className="shareImage"
                   src="/images/share.png"
                   alt="shareImage"
                 />
-              </div>
+              </button>
               <div className="productStatus">
                 <div className="watch">
                   <img
@@ -181,16 +185,31 @@ const ProductDetail = () => {
                 </div>
                 <div className="sellerInfoDetailRight">
                   <div className="sellerGrade">
-                    <img
+                    {/* <img
                       className="stars"
                       src="/images/star.png"
                       alt="stars"
-                    ></img>
-                    <img
-                      className="stars"
-                      src="/images/star.png"
-                      alt="stars"
-                    ></img>
+                    ></img> */}
+
+                    <Rating
+                      emptySymbol={
+                        <img src="/images/none.png" className="icon" />
+                      }
+                      fullSymbol={
+                        <img src="/images/full.png" className="icon" />
+                      }
+                      readonly
+                      initialRating={seller?.starRatings}
+                    />
+
+                    {/* <StarRatingComponent
+                      name="app6"
+                      starColor="#ffcc49"
+                      emptyStarColor="#eddeba"
+                      starCount={5}
+                      value={3.5}
+                    /> */}
+
                     <div className="sales">
                       ({seller?.ratings.toLocaleString()})
                     </div>
@@ -198,9 +217,11 @@ const ProductDetail = () => {
                 </div>
               </div>
             </div>
-            <div className="paymentBtnBox">
-              <button className="paymentBtn">앱에서 안전하게 결제하기</button>
-            </div>
+            <Link to="/payment" className="link">
+              <div className="paymentBtnBox">
+                <button className="paymentBtn">앱에서 안전하게 결제하기</button>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
