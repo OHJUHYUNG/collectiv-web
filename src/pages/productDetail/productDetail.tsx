@@ -3,11 +3,10 @@ import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Carousel from "../../common/Carousel";
+import Rating from "react-rating";
 import "./productDetail.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Rating from "react-rating";
-import StarRatingComponent from "react-star-rating-component";
 
 export interface ProductImage {
   url: string;
@@ -42,9 +41,7 @@ interface SellerInfo {
   ratings: number;
 }
 
-// 이전 페이지에서 데이터 받아올 때
 interface ProductDetailProps {
-  // product: Product | null;
   id?: number;
 }
 
@@ -153,13 +150,11 @@ const ProductDetail = (props: ProductDetailProps): JSX.Element => {
               <div className="productComments">{product?.productComments}</div>
             </div>
           </div>
-
           <div className="banner">
             <div className="bannerText">
               안전 결제 수수료 0원, 판매자 추가 정산 이벤트 중
             </div>
           </div>
-
           <div className="bottomBox">
             <div className="sellerInfoBox" key={seller?.id}>
               <div className="sellerInfoTitle">판매자 정보</div>
@@ -185,12 +180,6 @@ const ProductDetail = (props: ProductDetailProps): JSX.Element => {
                 </div>
                 <div className="sellerInfoDetailRight">
                   <div className="sellerGrade">
-                    {/* <img
-                      className="stars"
-                      src="/images/star.png"
-                      alt="stars"
-                    ></img> */}
-
                     <Rating
                       emptySymbol={
                         <img src="/images/none.png" className="icon" />
@@ -201,15 +190,6 @@ const ProductDetail = (props: ProductDetailProps): JSX.Element => {
                       readonly
                       initialRating={seller?.starRatings}
                     />
-
-                    {/* <StarRatingComponent
-                      name="app6"
-                      starColor="#ffcc49"
-                      emptyStarColor="#eddeba"
-                      starCount={5}
-                      value={3.5}
-                    /> */}
-
                     <div className="sales">
                       ({seller?.ratings.toLocaleString()})
                     </div>
