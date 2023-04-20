@@ -45,7 +45,7 @@
   color: #828282;
 }
 
-.oneOnOneBox {
+/* .oneOnOneBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,7 +64,7 @@
   font-size: 11px;
   line-height: 15px;
   color: #828282;
-}
+} */
 
 .oneOnOneBox {
   display: flex;
@@ -73,7 +73,7 @@
   align-items: center;
   padding: 6px 8px;
   gap: 10px;
-  width: 52px;
+  width: 54px;
   height: 25px;
   background: #ffffff;
   border: 0.5px solid #e0e0e0;
@@ -93,7 +93,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 151px;
+  width: 152px;
   margin-top: 16px;
 }
 
